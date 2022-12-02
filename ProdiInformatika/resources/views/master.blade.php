@@ -14,14 +14,37 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css">
 
     <link href='https://fonts.googleapis.com/css?family=Nunito' rel='stylesheet'>
-    
+
     <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
 
     <style>
+        .swiper-slide img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
 
-        *{
+        .martop {
+            margin-top: 20px;
+            background-color: rgba(255, 0, 0, 0.109);
+            background-size: contain;
+        }
+
+        .beff {
+            margin: 20px;
+            background-color: aliceblue;
+        }
+
+        .afft {
+            margin: 20px;
+        }
+
+        * {
             font-family: 'Nunito';
         }
+
         .ele {
             margin: 0;
             position: absolute;
@@ -92,9 +115,8 @@
         }
 
         .dropdown-child {
-            
             display: none;
-            position: fixed;
+            position: absolute;
             background-color: rgba(90, 94, 123, 0.67);
             padding-block-end: 20px;
             border-radius: 3%;
@@ -109,7 +131,7 @@
         }
 
         .dropdown-child a:hover {
-            background-color:rgba(90, 94, 123, 1);
+            background-color: rgba(90, 94, 123, 1);
             border-radius: 3%;
         }
 
@@ -125,29 +147,29 @@
 <body style="background-color: rgba(25, 36, 111, 1);margin: 0; padding: 0;">
     <header>
         <div class="d-flex justify-content-between text-light" style="background-color: rgba(25, 36, 111, 1);">
-            <div class="ms-4 mt-4">
-                <img src="{{ asset('asset/img/logo_del.png') }}" alt="logo del disini" class="h-50">
+            <div class="ms-4 mt-4 mb-4">
+                <img src="{{ asset('asset/img/logo_del.png') }}" alt="logo del disini" width="75em" style="border-radius: 10%;">
             </div>
             <div>
                 <div class=" align-middle" style="display: flex;">
-                    <p class="p-2 mx-4">Beranda</p>
+                    <p class="p-2 mx-4"><a href="/">Beranda</a></p>
 
                     <div class="dropdown">
-                        <p class="mainmenubtn mt-2 mx-4">Tentang Kita<i class="ri-arrow-down-s-fill"></i></p>
+                        <p class="mainmenubtn mt-1 mx-4">Tentang Kita<i class="ri-arrow-down-s-fill"></i></p>
                         <div class="dropdown-child float">
-                            <a href=”http://wwww.yourdonain.com/page1.html”>Visi Misi </a>
-                            <a href=”http://wwww.yourdonain.com/page2.html”>Sejarah</a>
-                            <a href=”http://wwww.yourdonain.com/page3.html”>Staff & Dosen </a>
+                            <a href="/visiMisi">Visi Misi </a>  
+                            <a href="/sejarah">Sejarah</a>
+                            <a href="/staffDosen">Staff & Dosen </a>
                         </div>
                     </div>
 
                     <p class="p-2 mx-4">Kurikulum</p>
-                    
+
                     <div class="dropdown">
-                        <p class="mainmenubtn mt-2 mx-4">Akademik<i class="ri-arrow-down-s-fill"></i></p>
+                        <p class="mainmenubtn mt-1 mx-4">Akademik<i class="ri-arrow-down-s-fill"></i></p>
                         <div class="dropdown-child float">
                             <a href=”http://wwww.yourdonain.com/page1.html”>Organisasi</a>
-                            <a href=”http://wwww.yourdonain.com/page2.html”>Profil Lulusan</a>
+                            <a href="/profil-lulusan">Profil Lulusan</a>
                             <a href=”http://wwww.yourdonain.com/page3.html”>Capaian</a>
                             <a href=”http://wwww.yourdonain.com/page4.html”>Galeri</a>
                         </div>
@@ -169,10 +191,13 @@
 
     @yield('section')
 
+    <br>
+    <br>
+
     <div class="bawah ">
         <div class=" pt-3 container-fluid text-light " name="footer "
             style="background-color: rgba(0, 121, 194, 0.7);margin: 0; padding: 0; ">
-            <img src="{{ asset('asset/img/logo_del.png') }}" alt="logo Del" class="m-2"><br>
+            <img src="{{ asset('asset/img/logo_del.png') }}" alt="logo Del" class="m-2" height="100em"><br>
             <div class="row p-3">
                 <div class="col-sm ">
                     <label for=" ">Institut Teknologi Del</label><br>
@@ -206,6 +231,28 @@
         </div>
         <p class="m-0 p-0 bg-dark text-light ">© 2022 Program Studi S1 INFORMATIKA - IT Del</p>
     </div>
+
+     <!-- Swiper JS -->
+     <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+
+     <!-- Initialize Swiper -->
+     <script>
+         var swiper = new Swiper(".mySwiper", {
+             slidesPerView: 3,
+             spaceBetween: 30,
+             slidesPerGroup: 3,
+             loop: true,
+             loopFillGroupWithBlank: true,
+             pagination: {
+                 el: ".swiper-pagination",
+                 clickable: true,
+             },
+             navigation: {
+                 nextEl: ".afft",
+                 prevEl: ".beff",
+             },
+         });
+     </script>
 </body>
 
 </html>
