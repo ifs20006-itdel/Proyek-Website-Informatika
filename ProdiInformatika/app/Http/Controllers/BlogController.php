@@ -39,7 +39,9 @@ class BlogController extends Controller
     }
 
     public function staffDosen(){
-        return view('staffDosen');
+        $dosen = DB::table('dosen')->get();
+
+        return view('staffDosen')->with('dosen', $dosen);
     }
 
     public function visiMisi(){
@@ -59,56 +61,4 @@ class BlogController extends Controller
     }
 
     
-    //admin Menu
-    public function addPost(){
-        return view('admin/addPostingan');
-    }
-
-    public function addPost_proses(Request $request){
-        $imageName = $request->file->getClientOriginalName();
-        $request->file->move(public_path('asset/img/berita'), $imageName);
-
-        DB::table('news_article')->insert([  
-            'judul' => $request->judul,
-            'deskripsi' => $request->deskripsi,
-            'isi' => $request->isi,
-            'gambar' => $request->file->getClientOriginalName()
-        ]);
-
-        return redirect('/');
-    }
-
-    public function addEvents(){
-        return view('admin/addEvents');
-    }
-
-    public function addEvents_proses(Request $request){
-        $this->validate($request,[
-            'nama' => 'required',
-            'waktu_mulai' => 'required',
-            'waktu_selesai' => 'required',
-            'deskripsi_singkat' => 'required',
-            'jenis' => 'required',
-            'lokasi' => 'required',
-            'penyelenggara' => 'required',
-            'kontak' => 'required',
-            'deskripsi' => 'required',
-            'penjelasan' => 'required'
-        ]);
-
-        DB::table('events')->insert([  
-            'nama' => $request->nama,
-            'waktu_mulai' => $request->waktu_mulai ,
-            'waktu_selesai'=> $request->waktu_selesai,
-            'deskripsi_singkat' => $request->deskripsi_singkat,
-            'jenis'=> $request->jenis,
-            'lokasi'=> $request->lokasi,
-            'penyelenggara' => $request->penyelenggara,
-            'kontak'=> $request->kontak,
-            'deskripsi' => $request->deskripsi,
-            'penjelasan'=> $request->penjelasan,
-        ]);
-        
-        return redirect('/');
-    }
 }

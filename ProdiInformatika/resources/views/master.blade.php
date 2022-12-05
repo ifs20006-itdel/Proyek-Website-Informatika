@@ -19,6 +19,24 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
 
     <style>
+
+
+        .gbrDosen{
+            border-radius: 50%;
+            width: 25%;
+        }
+        
+        .serv ul {
+            display: flex;
+            flex-wrap: wrap;
+            padding-left: 0;
+        }
+
+        .serv ul li {
+            list-style: none;
+            flex: 0 0 33.333333%;
+        }
+
         .swiper-slide img {
             display: block;
             width: 100%;
@@ -148,7 +166,8 @@
     <header>
         <div class="d-flex justify-content-between text-light" style="background-color: rgba(25, 36, 111, 1);">
             <div class="ms-4 mt-4 mb-4">
-                <img src="{{ asset('asset/img/logo_del.png') }}" alt="logo del disini" width="75em" style="border-radius: 10%;">
+                <img src="{{ asset('asset/img/logo_del.png') }}" alt="logo del disini" width="75em"
+                    style="border-radius: 10%;">
             </div>
             <div>
                 <div class=" align-middle" style="display: flex;">
@@ -157,7 +176,7 @@
                     <div class="dropdown">
                         <p class="mainmenubtn mt-1 mx-4">Tentang Kita<i class="ri-arrow-down-s-fill"></i></p>
                         <div class="dropdown-child float">
-                            <a href="/visiMisi">Visi Misi </a>  
+                            <a href="/visiMisi">Visi Misi </a>
                             <a href="/sejarah">Sejarah</a>
                             <a href="/staffDosen">Staff & Dosen </a>
                         </div>
@@ -232,27 +251,27 @@
         <p class="m-0 p-0 bg-dark text-light ">© 2022 Program Studi S1 INFORMATIKA - IT Del</p>
     </div>
 
-     <!-- Swiper JS -->
-     <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
 
-     <!-- Initialize Swiper -->
-     <script>
-         var swiper = new Swiper(".mySwiper", {
-             slidesPerView: 3,
-             spaceBetween: 30,
-             slidesPerGroup: 3,
-             loop: true,
-             loopFillGroupWithBlank: true,
-             pagination: {
-                 el: ".swiper-pagination",
-                 clickable: true,
-             },
-             navigation: {
-                 nextEl: ".afft",
-                 prevEl: ".beff",
-             },
-         });
-     </script>
+    <!-- Initialize Swiper -->
+    <script>
+        var swiper = new Swiper(".mySwiper", {
+            slidesPerView: 3,
+            spaceBetween: 30,
+            slidesPerGroup: 3,
+            loop: true,
+            loopFillGroupWithBlank: true,
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+            navigation: {
+                nextEl: ".afft",
+                prevEl: ".beff",
+            },
+        });
+    </script>
 </body>
 
 </html>

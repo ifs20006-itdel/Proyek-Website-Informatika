@@ -115,14 +115,33 @@
                     <div class="ele">
                         <b>
                             <i class="ri-pages-line"></i>
-                            <p><b>Dosen & Staff</b></p>
+                            <p><b>Dosen</b></p>
                             <h2><b>{{ $p->Publikasi }}</b></h2>
                         </b>
                     </div>
                 </div>
             @endforeach
             </div>
+
+            
     </section>
+
+<br><br>
+
+    <div class="container text-light">
+        <h1 class="text-center">Link Terkait</h1><br><br>
+        <ul class="d-flex justify-content-between">
+            <div>
+                
+                <a href="">Institut Teknologi Del</a>
+            </div>
+            <a href="">HIMASTI</a>
+            <a href="">Pengumuman Mahasiswa Baru</a>
+            <a href="">Kalender Kegiatan</a>
+        </ul>
+    </div>
+
+
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous">

@@ -24,8 +24,8 @@ return new class extends Migration
             $table->string('lokasi');
             $table->string('penyelenggara');
             $table->string('kontak');
-            $table->string('deskripsi');
-            $table->string('penjelasan');
+            $table->text('deskripsi');
+            $table->text('penjelasan');
             $table->timestamps();
         });
     }
